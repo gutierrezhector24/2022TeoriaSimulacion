@@ -1,0 +1,42 @@
+#containerEmploye {
+    border: 1px solid rgba(128, 128, 128, 0.338);
+    border-radius: 10px;
+    box-shadow: 0px 1px 15px 5px rgba(0, 0, 0, 0.107);
+    /*display: none;*/
+}
+
+#btn-AggEmploye {
+    color: white;
+}
+
+#btn-cancelarEmploye {
+    color: white;
+}
+
+#btn-AggOrden {
+    color: white;
+}
+
+#divImage1 {
+    text-align: center center;
+    padding-left: auto!important;
+    padding-right: auto!important;
+}
+
+
+/************************************/
+#containerOrden {
+    border: 1px solid rgba(128, 128, 128, 0.338);
+    border-radius: 10px;
+    box-shadow: 0px 1px 15px 5px rgba(0, 0, 0, 0.107);
+    /*display: none;*/
+}
+
+/************************************/
+#containerPrincipal {
+    border: 1px solid rgba(128, 128, 128, 0.338);
+    background-color: rgba(128, 128, 128, 0.046);
+    /*border-radius: 10px;
+    box-shadow: 0px 1px 15px 5px rgba(0, 0, 0, 0.107);
+    display: none;*/
+}

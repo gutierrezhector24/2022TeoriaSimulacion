@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mini Proyecto Teoria</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/all.css"><!--FontAwesome-->
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body class="col-12 px-3 py-3 container">
+
+    <div id="containerPrincipal">
+        <div class="col-12 my-3 pt-4 pb-4 row">
+            <div id="ordenes" class="col-9">
+                <div class="mb-3 row">
+                    <label for="inputDate" class="col-3 col-form-label">Fecha a filtrar</label>
+                    <div class="col-9">
+                      <input type="date" class="form-control" id="inputFecha" placeholder="dd/mm/aaaa">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="inputOrdinarias" class="col-3 col-form-label">Carga de Ord. Ordinarias</label>
+                    <div class="col-9">
+                      <input type="number" class="form-control" id="inputOrdinarias" placeholder="Cant. Ordenes ordinarias">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="inputComplejas" class="col-3 col-form-label">Carga de Ord. Complejas</label>
+                    <div class="col-9">
+                      <input type="number" class="form-control" id="inputComplejas" placeholder="Cant. Ordenes Complejas">
+                    </div>
+                </div>            
+            </div>
+            <div class="col-3">
+                <div class="mb-3">
+                    <button id="btn-1" type="button" class="btn col-12 btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalOrden">Agregar Nueva Orden</button>
+                </div>
+                <div class="mb-3">
+                    <button id="btn-2" type="button" class="btn col-12 btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModalEmpleado">Agregar Nuevo Empleado</button>
+                </div>
+                <div class="mb-3">
+                    <button id="btn-3" type="button" class="btn col-12 btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalIniciales">Ordenes Iniciales</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 my-3 pt-4 pb-4 row">
+            <div class="col-4">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Empleado(s):</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Seleccione una opcion</option>
+                        <option value="emp1">Opcion 1</option>
+                        <option value="emp2">Opcion 2</option>
+                        <option value="emp3">Opcion 3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-8 pl-5">
+                <img class="mx-auto" src="img/graficas.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- Button trigger modal -->
+
+  
+    <!-- Modal Empleado -->
+    <div class="modal fade" id="exampleModalEmpleado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Datos del empleado</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body row col-12">
+                <div class="col-7">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Nombres</label>
+                        <input id="nombresEmpleado" type="text" class="form-control" placeholder="Primer y segundo nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Apellidos</label>
+                        <input type="text" class="form-control" id="apellidosEmpleado" placeholder="Primer y segundo apellido">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Fecha de Ingreso</label>
+                        <input type="date" class="form-control" id="fechaIngreso" placeholder="dd/mm/aaaa">
+                    </div>
+                    <div class="row col-12 px-0 mx-0">
+                        <button id="btn-cancelarEmploye" type="button" class="col-6 btn btn-danger" onclick="cancelarEmpleado()" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+                        <button id="btn-AggEmploye" type="button" class="col-6 btn btn-info" onclick="agregarEmpleado()">Ingresar</button>
+                    </div>
+                </div>
+                <div class="col-5 px-auto mx-auto" id="divImage1">
+                    <div class="mx-auto px-auto">
+                        <img src="img/imagen2.jpg">
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Orden -->
+    <div class="modal fade" id="exampleModalOrden" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Datos de la Orden</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body row col-12">
+                <div class="col-7">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">ID Orden</label>
+                        <input type="text" class="form-control" id="idOrden" placeholder="ID de la Orden">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Tipo de Orden</label>
+                        <select class="form-select" aria-label="Default select example" id="tipoOrden">
+                            <option selected>Seleccione una opcion</option>
+                            <option value="op1">Opcion 1</option>
+                            <option value="op2">Opcion 2</option>
+                            <option value="op3">Opcion 3</option>
+                        </select>
+                    </div>
+                    <div class="col-12 row px-0 mx-0">
+                        <button id="btn-cancelarOrden" type="button" class="col-6 btn btn-danger" onclick="cancelarOrden()" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+                        <button id="btn-AggOrden" type="button" class="col-6 btn btn-info" onclick="agregarOrden()">Ingresar</button>
+                    </div>
+                </div>
+                <div class="col-5" id="divImage1">
+                    <div>
+                        <img src="img/imagen3.jfif">
+                    </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Modal Ordenes Iniciales-->
+  <div class="modal fade" id="exampleModalIniciales" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ordenes Iniciales</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/controlador.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+</body>
+</html>
