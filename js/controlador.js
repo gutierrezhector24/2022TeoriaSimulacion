@@ -1,7 +1,8 @@
 var Empleados = [];
 var Ordenes = [];
 
-
+//no se estan usando estas funciones
+/*
 function abrirOrden(){
  document.getElementById('containerEmploye').style.display = 'none';
  document.getElementById('containerPrincipal').style.display = 'none';
@@ -19,6 +20,7 @@ function abrirIniciales(){
     document.getElementById('containerPrincipal').style.display = 'block';
     document.getElementById('containerOrden').style.display = 'none';
 }
+*/
 
 function agregarEmpleado(){
     var Empleado = {
